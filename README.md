@@ -19,10 +19,10 @@ hova need do:
 
  while user try to search a User, first user can selector properties.
  for example customer select user, then next select box will popup {id,name,age,wife}
-  choose id, as id is inteter, next select box will popup {>,<,= etc}
-  choose name, as name is String, next select box will popup {contains,start with,is,not,endwith etc}
-  choose wife, as wife is another entity, next select box will popup another {User} search.
-  choose home, as home is another entity, next select box will popup {Adress} search
+  a. choose id, as id is inteter, next select box will popup {>,<,= etc}
+  b. choose name, as name is String, next select box will popup {contains,start with,is,not,endwith etc}
+  b. choose wife, as wife is another entity, next select box will popup another {User} search.
+  d. choose home, as home is another entity, next select box will popup {Adress} search
 
 
 
