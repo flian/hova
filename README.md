@@ -1,2 +1,27 @@
 # hova
 hibernate entity object view admin
+
+Just try following things:
+
+dependce just hibernate entity class/xml
+
+hova need do:
+
+1. list all entity type
+2. once select one entity class, can auto list all entity obejects
+3. can create a new/modify entity object, modify its literal properties.
+4. can choose many2one/one2one related entity object
+5. can add related entity object to one2many list/set/map
+6. can search by entity propeties with auto reminder select
+  e.g.  
+  entity User{int:id,string:name,int age,User:wife,Address[]: addresses}
+  entiy  Address{String country,String address}
+
+ while user try to search a User, first user can select properties.
+ for example customer select user, then next select box will popup {id,name,age,wife}
+  choose id, as id is inteter, next select box will popup {>,<,=}
+  choose name, as name is String, next select box will popup {contains,start with,is,not,endwith etc}
+  choose wife, as wife is another entity, next select box will popup another {User} search.
+
+
+
