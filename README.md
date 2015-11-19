@@ -17,12 +17,18 @@ hova need do:
   entity User{int:id,string:name,int age,User:wife,Address:home,Address[]: addresses}
   entiy  Address{String country,String address}
     
- while user try to search a User, first user can selector properties.    ＜/br＞
- for example customer select user, then next select box will popup {id,name,age,wife}   ＜/br＞
-  a. choose id, as id is inteter, next select box will popup {>,<,= etc}    ＜/br＞
-  b. choose name, as name is String, next select box will popup {contains,start with,is,not,endwith etc}    ＜/br＞
-  b. choose wife, as wife is another entity, next select box will popup another {User} search.    ＜/br＞
-  d. choose home, as home is another entity, next select box will popup {Adress} search   ＜/br＞
+ while user try to search a User, first user can selector properties.    
+
+ for example customer select user, then next select box will popup {id,name,age,wife}   
+ 
+  a. choose id, as id is inteter, next select box will popup {>,<,= etc}    
+  
+  b. choose name, as name is String, next select box will popup {contains,start with,is,not,endwith etc}   
+  
+  c. choose wife, as wife is another entity, next select box will popup another {User} search.    
+  
+  d. choose home, as home is another entity, next select box will popup {Adress} search.   
+  
 
 
 
