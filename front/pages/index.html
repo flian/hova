@@ -7,7 +7,6 @@
 <body ng-controller="PhoneListCtrl">
 
 <select  ng-change="buildNext(item)" ng-model="item" ng-repeat="ds in dynamicSelects">
-    <option value="-">please choose</option>
     <option  ng-repeat="c in ds.conditons" value="{{c.value}}-{{$index}}">
         {{c.name}}
     </option>

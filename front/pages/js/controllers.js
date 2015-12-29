@@ -59,8 +59,8 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
     ];
     var joinOrEndOp=[
         {name:'end',value:'end',nextOp:'end'},
-        {name:'and',value:'and',nextOp:'rootOp'},
-        {name:'or',value:'or',nextOp:'rootOp'}
+        {name:'and',value:'and',nextOp:'root'},
+        {name:'or',value:'or',nextOp:'root'}
     ];
     var map={root:root,user:user,address:address,numberOp:numberOp,strOp:strOp,inputOp:inputOp,joinOrEndOp:joinOrEndOp,nextMarkOp:nextMarkOp}
 
@@ -77,7 +77,7 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
         }
         if(opKey == 'inputOp'){
             //push input
-            lastRoot=map[opKey];
+            lastRoot=map[opKey][0];
             var tmpInput={name:lastRoot.name,value:""};
             $scope.dynamicInputs.push(tmpInput);
 
@@ -95,6 +95,6 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
         {conditons: root}
     ];
     $scope.dynamicInputs=[
-        {}
+
     ];
 });
