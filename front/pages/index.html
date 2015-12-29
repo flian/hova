@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="phonecatApp">
+<head>
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="PhoneListCtrl">
+
+<select  ng-change="buildNext(item)" ng-model="item" ng-repeat="ds in dynamicSelects">
+    <option value="-">please choose</option>
+    <option  ng-repeat="c in ds.conditons" value="{{c.value}}-{{$index}}">
+        {{c.name}}
+    </option>
+</select>
+
+<input ng-model="usrInput" ng-repeat="din in dynamicInputs" name="{{din.name}}" value="{{din.value}}"/>
+
+</body>
+</html>
