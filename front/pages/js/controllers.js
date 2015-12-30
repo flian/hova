@@ -2,9 +2,9 @@
 
 /* Controllers */
 
-var phonecatApp = angular.module('phonecatApp', []);
+var hovaApp = angular.module('hovaApp', []);
 
-phonecatApp.controller('PhoneListCtrl', function($scope) {
+hovaApp.controller('hovaCtrl', function($scope) {
     /**
      *
      * 类型：
@@ -78,23 +78,20 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
         if(opKey == 'inputOp'){
             //push input
             lastRoot=map[opKey][0];
-            var tmpInput={name:lastRoot.name,value:""};
-            $scope.dynamicInputs.push(tmpInput);
+            var tmpInput={name:lastRoot.name,value:"",type:"input"};
+            $scope.dynamicContents.push(tmpInput);
 
             //push nextMarkOp
             lastRoot=map[lastRoot.nextOp];
-            $scope.dynamicSelects.push({name:lastRoot.name,conditons:lastRoot});
+            $scope.dynamicContents.push({name:lastRoot.name,conditons:lastRoot,type:"select"});
 
         }else{
             lastRoot=map[opKey];
-            $scope.dynamicSelects.push({name:lastRoot.name,conditons:lastRoot});
+            $scope.dynamicContents.push({name:lastRoot.name,conditons:lastRoot,type:"select"});
         }
     }
-
-    $scope.dynamicSelects=[
-        {name:"root",conditons: root}
+    $scope.dynamicContents=[
+        {name:"root",conditons: root,type:"select"}
     ];
-    $scope.dynamicInputs=[
 
-    ];
 });

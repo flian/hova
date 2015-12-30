@@ -1,18 +1,23 @@
 <!doctype html>
-<html ng-app="phonecatApp">
+<html ng-app="hovaApp">
 <head>
-    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <script src="http://code.angularjs.org/1.4.8/angular.min.js"></script>
     <script src="js/controllers.js"></script>
 </head>
-<body ng-controller="PhoneListCtrl">
+<body ng-controller="hovaCtrl">
 
-<select  name="{{ds.name}}" ng-change="buildNext(item)" ng-model="item" ng-repeat="ds in dynamicSelects">
-    <option  ng-repeat="c in ds.conditons" value="{{c.value}}-{{$index}}">
-        {{c.name}}
-    </option>
-</select>
-
-<input ng-model="usrInput" ng-repeat="din in dynamicInputs" name="{{din.name}}" value="{{din.value}}"/>
+<div ng-repeat="content in dynamicContents">
+    <div ng-if="content.type=='select'" name="{{content.type}}">
+        <select  name="{{content.name}}" ng-change="buildNext(item)" ng-model="item">
+            <option  ng-repeat="c in content.conditons" value="{{c.value}}-{{$index}}">
+                {{c.name}}
+            </option>
+        </select>
+    </div>
+    <div ng-if="content.type=='input'" name="{{content.type}}">
+        <input ng-model="usrInput" name="{{content.name}}" value="{{content.value}}"/>
+    </div>
+</div>
 
 </body>
 </html>
