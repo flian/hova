@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+.table > tbody > tr > td {border:none; vertical-align:middle;}
+
+.table {width:100%; float:left; margin:0;}
+.table td {padding:5px; vertical-align:middle; color:#474747; font-size:12px; line-height:16px;}
+.table .title th {padding:10px 5px; line-height:20px; font-size:12px;}
+.table td p {max-width:100%; float:left; text-align:left;}
+.table .showList {width:100%; height:px; overflow:hidden; overflow-y:auto;}
+.table th {font-weight:100;}
+.table label {margin:0;}
+ 
+.tableA {border:1px solid #DDD;}
+.tableA > tbody > tr > td {border-bottom:1px dotted #DDD; text-align:center; line-height:22px; vertical-align:middle;}
+.tableA .title th {color:#333; background:#F7F7F7; text-align:center; border-bottom:1px solid #DDD; font-size:14px;}
+.tableA .even td {background:#ECF3FA;}
+.tableA .active td,.tableA .active .red,.tableA .active .green,.tableA .active .gray,.tableA .active a {color:#FFF;}
+.tableA .active td {background:#428BCA;}
+.tableA .active a {color:#FFFC00; text-decoration:underline;}
+.tableA .active a:hover {text-decoration:none;}
+.tableA .notice { min-height:60px; line-height:60px;}
+
+
+.tableB {border:1px solid #DDD; border-right:none; border-bottom:none; margin-top:10px;}
+.tableB > tbody > tr > td {border:1px solid #DDD; border-left:none; border-top:none;}
+.tableB .title th {background:#EEE; font-weight:100; color:#666;}
+.tableB .title th:last-child {border-right:1px solid #DDD;}
+.tableB .even td {background:#F7F7F7;}
+
+.tableC {border-bottom:1px solid #DDD;}
+.tableC>tbody>tr>td,.tableC>tbody>tr>th {border:none; padding:3px 0; text-align:center;}
+.tableC>tbody>tr>td {padding:10px 0;}
+.tableC td {color:#666; height:80px;}
+.tableC tr {border-left:1px solid #DDD; border-right:1px solid #DDD; border-bottom:1px dotted #CCC;}
+.tableC .title {text-align:left;}
+.tableC .titles {color:#FFF; padding:0;}
+.tableC .titles td {border-top:none;}
+.tableC td p { margin-left:20px; line-height:24px;}
+.tableC .pic {width:60px; height:60px;}
+.tableC .pic a {float:left; padding:1px; background:#EEE;}
+.tableC .pic a:hover {background:#4EB248;}
+
+.tableD {border:1px solid #DDD; border-right:none; border-bottom:none;}
+.tableD td,.tableD th {text-align:center;}
+.tableD > tbody > tr > td,.tableD > tbody > tr > th {border:1px solid #DDD; border-left:none; border-top:none;}
+.tableD .title th {color:#333; font-size:14px; background:#EEE;}
+.tableD td { line-height:26px;}
+
+.tableForm,.tableForm ul,.tableForm li,.tableForm .notice  {width:100%; float:left;}
+.tableForm {margin-bottom:10px;}
+.tableForm label,.tableForm label span  {float:left; margin:0; margin-right:10px; font-weight:100;}
+.tableForm label span {margin-right:5px;}
+.tableForm li {position:relative; margin:5px 0 0;}
+.tableForm li label,.tableForm li span {float:left;}
+
+.tableForm li select {width:auto; height:24px; -moz-box-shadow:3px 3px 3px #E6E6E6 inset; -webkit-box-shadow:3px 3px 3px #E6E6E6 inset; box-shadow:3px 3px 3px #E6E6E6 inset; border-radius:0; border:1px solid #BBB; padding:0 3px;}
+.tableForm li .text {width:120px; height:24px; padding-left:5px;}
+.tableForm li .dates {width:130px; padding-left:25px;}
+.tableForm li.bottom {padding:15px 0 30px; padding-left:140px;}
+.tableForm li .btn {width:70px; height:27px; line-height:10px; margin-top:-1px;}

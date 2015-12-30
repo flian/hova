@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html ng-app="shippingAddress">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无限极纷享荟</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/buychart.css" rel="stylesheet" type="text/css">
+    <link href="css/table.css" rel="stylesheet" type="text/css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/shippingAddressControllers.js"></script>
+</head>
+
+<body ng-controller="shippingAddressCtl">
+<div class="head">
+    <div class="top font12">
+        <div class="w1000"></div>
+    </div>
+
+    <div class="cont w1000">
+
+    </div>
+</div>
+<div class="content">
+    <div class="w1000">
+        <div class="item active">
+            <div class="title">
+                <div class="pull-right"><span class="pull-left">配送至：</span>
+                    <div class="address addressLeft" ><span class="fonts" ng-bind="result" ng-click="show()"></span>
+                        <div class="subList" ng-show="myShow">
+                            <div class="tags">
+                                <ul>
+                                    <li ng-bind="currentProvince[1]" ng-click="changeTab(1)"></li>
+                                    <li ng-bind="currentCity[1]" ng-click="changeTab(2)"></li>
+                                    <li ng-bind="currentDistrict[1]" ng-click="changeTab(3)"></li>
+                                </ul>
+                            </div>
+                            <div class="shown">
+                                <div class="cont" ng-show="provinceActive">
+                                    <ul class="areaList">
+                                        <li ng-repeat="p in province"><a href="#none"  ng-click="provinceChange(p)">{{p[1]}}</a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="cont" ng-show="cityActive">
+                                    <ul class="areaList">
+                                        <li ng-repeat="c in city1"><a href="#none"  ng-click="cityChange(c)">{{c[1]}}</a></li>
+                                    </ul>
+                                </div>
+                                <div class="cont">
+                                    <ul class="areaList" ng-show="districtActive">
+                                        <li ng-repeat="d in district1"><a href="#none" ng-click="districtChange(d)">{{d[1]}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+</div>
+<div class="foot center">
+
+</div>
+<!--
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/common.js"></script>
+ -->
+</body>
+</html>

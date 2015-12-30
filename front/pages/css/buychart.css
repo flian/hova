@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+.item,.title {width:100%; float:left;}
+.kuang {border:1px solid #DDD;}
+
+/**  **/
+.item {margin-bottom:30px;}
+.item .table {margin-top:10px;}
+.item .owens .titles {background:#4DB249; border:1px solid #37A633;}
+.item .thirds .titles {background:#15B0AD; border:1px solid #0EA29F;}
+.item label span {float:left; margin:2px 3px 0 0;}
+.tableC td .active {padding:0 5px; margin-right:5px; line-height:20px; color:#FFF; background:#F52427; font-style:normal; border-radius:3px;}
+.owens tr.select td {background:#F0FFEF;}
+.thirds tr.select td {background:#F3FBFB;}
+.checkAll {margin-top:-10px; padding:5px;}
+.checkAll li {float:left; padding:0 10px; line-height:40px;}
+.checkAll li.all {float:right; padding:0;} 
+.checkAll .btn {width:100px; height:40px; line-height:26px; margin-left:20px;}
+.item .pull-right select {border:1px solid #CCC; height:26px; margin-right:10px; float:left;}
+.item .pull-right label {float:left; margin:0 -10px 0 0;}
+
+/** **/
+.address .subList {top:24px; right:-1px;}
