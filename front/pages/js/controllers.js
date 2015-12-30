@@ -66,7 +66,6 @@ hovaApp.controller('hovaCtrl', function($scope) {
 
     var lastRoot=root;
     $scope.buildNext=function(item){
-        console.log(item);
         var tmp = item.split("-");
         var val=tmp[0];
         var idx=tmp[1];
@@ -93,5 +92,17 @@ hovaApp.controller('hovaCtrl', function($scope) {
     $scope.dynamicContents=[
         {name:"root",conditons: root,type:"select"}
     ];
-
+    $scope.go=function(){
+        var items=$scope.selectItem;
+        var hql='hql: ';
+        angular.forEach(items,function(value,key){
+            hql=hql+' '+value;
+        });
+        var val="values:";
+        var values=$scope.inputItem;
+        angular.forEach(values,function(v,k){
+            val=val+' '+v;
+        });
+        $scope.hql=hql+val;
+    };
 });

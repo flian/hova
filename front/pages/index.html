@@ -1,23 +1,27 @@
 <!doctype html>
 <html ng-app="hovaApp">
 <head>
+    <!--
     <script src="http://code.angularjs.org/1.4.8/angular.min.js"></script>
+    -->
+    <script src="js/angular.min.js"></script>
     <script src="js/controllers.js"></script>
 </head>
 <body ng-controller="hovaCtrl">
 
 <div ng-repeat="content in dynamicContents">
     <div ng-if="content.type=='select'" name="{{content.type}}">
-        <select  name="{{content.name}}" ng-change="buildNext(item)" ng-model="item">
+        <select  name="{{content.name}}" ng-change="buildNext(selectItem)" ng-model="selectItem">
             <option  ng-repeat="c in content.conditons" value="{{c.value}}-{{$index}}">
                 {{c.name}}
             </option>
         </select>
     </div>
     <div ng-if="content.type=='input'" name="{{content.type}}">
-        <input ng-model="usrInput" name="{{content.name}}" value="{{content.value}}"/>
+        <input ng-model="inputItem" name="{{content.name}}" value="{{content.value}}"/>
     </div>
 </div>
-
+<input type="button" value="go!" ng-click="go()"/>
+<textarea rows="3" cols="20" ng-model="hql"/>
 </body>
 </html>
