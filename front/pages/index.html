@@ -6,7 +6,7 @@
 </head>
 <body ng-controller="PhoneListCtrl">
 
-<select  ng-change="buildNext(item)" ng-model="item" ng-repeat="ds in dynamicSelects">
+<select  name="{{ds.name}}" ng-change="buildNext(item)" ng-model="item" ng-repeat="ds in dynamicSelects">
     <option  ng-repeat="c in ds.conditons" value="{{c.value}}-{{$index}}">
         {{c.name}}
     </option>

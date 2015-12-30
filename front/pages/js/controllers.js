@@ -83,16 +83,16 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
 
             //push nextMarkOp
             lastRoot=map[lastRoot.nextOp];
-            $scope.dynamicSelects.push({conditons:lastRoot});
+            $scope.dynamicSelects.push({name:lastRoot.name,conditons:lastRoot});
 
         }else{
             lastRoot=map[opKey];
-            $scope.dynamicSelects.push({conditons:lastRoot});
+            $scope.dynamicSelects.push({name:lastRoot.name,conditons:lastRoot});
         }
     }
 
     $scope.dynamicSelects=[
-        {conditons: root}
+        {name:"root",conditons: root}
     ];
     $scope.dynamicInputs=[
 
