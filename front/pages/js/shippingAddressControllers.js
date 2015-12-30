@@ -9,13 +9,13 @@ shippingAddress.controller('shippingAddressCtl', function($scope) {
     $scope.provinceActive=true;
     $scope.currentProvince=$scope.province[0];
     //id,name,proviceId
-    $scope.city=[['2','成都','2'],['3','绵阳','2'],['4','巴南区','3'],['5','渝北区','3']];
+    $scope.city=[['2','成都','2'],['3','绵阳','2'],['4','渝中区','3'],['5','沙坪坝区','3']];
     $scope.city1=[];
     $scope.cityActive=false;
     $scope.currentCity=$scope.city[0];
 
     //id,name,cityId
-    $scope.district=[['2','高新区','2'],['3','双河区','3'],['4','鱼洞','4'],['5','两路','5']];
+    $scope.district=[['2','高新区','2'],['3','双河区','3'],['4','解放碑','4'],['5','小龙坎','5']];
     $scope.district1=[];
     $scope.districtActive=false;
     $scope.currentDistrict=$scope.district[0];
