@@ -11,17 +11,17 @@
 
 <div ng-repeat="content in dynamicContents">
     <div ng-if="content.type=='select'" name="{{content.type}}">
-        <select  name="{{content.name}}" ng-change="buildNext(selectItem)" ng-model="selectItem">
+        <select  name="{{content.name}}" ng-change="buildNext(selectItem[$index])" ng-model="selectItem[$index]">
             <option  ng-repeat="c in content.conditons" value="{{c.value}}-{{$index}}">
                 {{c.name}}
             </option>
         </select>
     </div>
     <div ng-if="content.type=='input'" name="{{content.type}}">
-        <input ng-model="inputItem" name="{{content.name}}" value="{{content.value}}"/>
+        <input ng-model="inputItem[$index]" name="{{content.name}}" value="{{content.value}}"/>
     </div>
 </div>
 <input type="button" value="go!" ng-click="go()"/>
-<textarea rows="3" cols="20" ng-model="hql"/>
+<textarea rows="20" cols="100" ng-model="hql"/>
 </body>
 </html>

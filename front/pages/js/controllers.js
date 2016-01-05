@@ -92,13 +92,16 @@ hovaApp.controller('hovaCtrl', function($scope) {
     $scope.dynamicContents=[
         {name:"root",conditons: root,type:"select"}
     ];
+    $scope.selectedItemMap={};
+    $scope.selectItem=[];
+    $scope.inputItem=[];
     $scope.go=function(){
         var items=$scope.selectItem;
-        var hql='hql: ';
+        var hql='hql: from';
         angular.forEach(items,function(value,key){
-            hql=hql+' '+value;
+            hql=hql+' '+value.split("-")[0]+ ' ';
         });
-        var val="values:";
+        var val=" values:";
         var values=$scope.inputItem;
         angular.forEach(values,function(v,k){
             val=val+' '+v;
