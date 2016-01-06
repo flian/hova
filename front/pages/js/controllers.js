@@ -33,13 +33,13 @@ hovaApp.controller('hovaCtrl', function($scope) {
         {'name':'address',value:'address',nextOp:'address'}
     ];
     var user=[
-        {name:'id',value:'id',nextOp:'numberOp'},
-        {name:'name',value:'name',nextOp:'strOp'},
-        {name:'age',value:'age',nextOp:'numberOp'}
+        {name:'id',value:'user.id',nextOp:'numberOp'},
+        {name:'name',value:'user.name',nextOp:'strOp'},
+        {name:'age',value:'user.age',nextOp:'numberOp'}
     ];
     var address=[
-        {name:'city',value:'city',nextOp:'strOp'},
-        {name:'street',value:'street',nextOp:'strOp'}
+        {name:'city',value:'address.city',nextOp:'strOp'},
+        {name:'street',value:'address.street',nextOp:'strOp'}
     ];
     var numberOp=[
         {name:'>',value:'>',nextOp:'inputOp'},
@@ -55,7 +55,7 @@ hovaApp.controller('hovaCtrl', function($scope) {
         {name:'inputOp',value:'inputOp',nextOp:'nextMarkOp'}
     ];
     var nextMarkOp=[
-        {name:'next>',value:'next>',nextOp:'joinOrEndOp'}
+        {name:'<>',value:'<>',nextOp:'joinOrEndOp'}
     ];
     var joinOrEndOp=[
         {name:'end',value:'end',nextOp:'end'},
@@ -92,20 +92,43 @@ hovaApp.controller('hovaCtrl', function($scope) {
     $scope.dynamicContents=[
         {name:"root",conditons: root,type:"select"}
     ];
-    $scope.selectedItemMap={};
     $scope.selectItem=[];
     $scope.inputItem=[];
     $scope.go=function(){
         var items=$scope.selectItem;
-        var hql='hql: from';
-        angular.forEach(items,function(value,key){
+
+        var hql=' hql: from where ';
+
+        /*
+             var hql=' hql: from';
+            angular.forEach(items,function(value,key){
             hql=hql+' '+value.split("-")[0]+ ' ';
         });
+        */
+
         var val=" values:";
         var values=$scope.inputItem;
-        angular.forEach(values,function(v,k){
+
+/*        angular.forEach(values,function(v,k){
+            if(v){
+                hql2=hql2+' ?('+v+')';
+            }else{
+                hql2=hql2+items[i].split("-")[0]+' ';
+            }
             val=val+' '+v;
-        });
+
+        });*/
+        for(var i=0;i<values.length;i++){
+            var v=values[i];
+            if(v){
+                hql=hql+' ?('+v+')';
+                val=val+' '+v;
+            }else{
+                hql=hql+' '+items[i].split("-")[0]+' ';
+            }
+
+        }
+        hql=hql.replace('<>','')+'\r\n';
         $scope.hql=hql+val;
     };
 });
